@@ -1,3 +1,4 @@
+import React from "react";	
 import { useState } from 'react';
 import { Upload, Link, Loader2, Download, Search, PlayCircle, CheckCircle, Sparkles, Video, Image, FileText, Zap, Brain, Trophy, BookOpen, Volume2 } from 'lucide-react';
 

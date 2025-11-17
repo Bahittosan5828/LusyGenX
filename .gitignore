@@ -1,4 +1,18 @@
-.venv/
+# Бэкапы и временные файлы
+*.bak
+*.broken
+*.log
+run_fix.sh
+
+# Python
+venv/
+__pycache__/
 *.pyc
-.env
-Инструкция_что_где_разворачивать_.txt
+
+# Node.js
+node_modules/
+
+# Данные
+qdrant_storage/
+uploads/
+outputs/
