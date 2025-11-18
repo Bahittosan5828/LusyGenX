@@ -15,16 +15,16 @@ export default function LucyGenXDemo() {
 
   const demoQuiz = {
     questions: [
-      { question: 'Что такое переменная в Python?', options: ['Контейнер для данных', 'Функция', 'Класс', 'Модуль'], correct: 0 },
-      { question: 'Какой оператор используется для цикла?', options: ['if', 'for', 'def', 'import'], correct: 1 },
+      { question: 'What is a variable in Python?', options: ['Data container', 'Function', 'Class', 'Module'], correct: 0 },
+      { question: 'Which operator is used for loops?', options: ['if', 'for', 'def', 'import'], correct: 1 },
     ]
   };
 
   const demoFlashcards = [
-    { front: 'Python', back: 'Язык программирования высокого уровня', category: 'Основы' },
-    { front: 'Variable', back: 'Именованная область памяти для хранения данных', category: 'Переменные' },
-    { front: 'Loop', back: 'Конструкция для повторения кода', category: 'Управление' },
-    { front: 'Function', back: 'Блок переиспользуемого кода', category: 'Функции' },
+    { front: 'Python', back: 'High-level programming language', category: 'Basics' },
+    { front: 'Variable', back: 'Named memory area for storing data', category: 'Variables' },
+    { front: 'Loop', back: 'Construction for repeating code', category: 'Control' },
+    { front: 'Function', back: 'Reusable code block', category: 'Functions' },
   ];
 
   const handleDemo = () => {
@@ -34,13 +34,13 @@ export default function LucyGenXDemo() {
     setResults(null);
     
     const steps = [
-      { progress: 15, step: 'Анализ видео и выделение ключевых моментов...', water: 0 },
-      { progress: 30, step: 'Удаление "воды" из контента...', water: 15 },
-      { progress: 45, step: 'Генерация PDF-слайдов...', water: 25 },
-      { progress: 60, step: 'Создание AI озвучки...', water: 28 },
-      { progress: 75, step: 'Сборка нового видео...', water: 30 },
-      { progress: 90, step: 'Генерация квиза и флешкарт...', water: 30 },
-      { progress: 100, step: 'Готово! 🎉', water: 30 },
+      { progress: 15, step: 'Analyzing video and extracting key moments...', water: 0 },
+      { progress: 30, step: 'Removing "filler" content...', water: 15 },
+      { progress: 45, step: 'Generating PDF slides...', water: 25 },
+      { progress: 60, step: 'Creating AI voiceover...', water: 28 },
+      { progress: 75, step: 'Building new video...', water: 30 },
+      { progress: 90, step: 'Generating quiz and flashcards...', water: 30 },
+      { progress: 100, step: 'Done! 🎉', water: 30 },
     ];
 
     let idx = 0;
@@ -90,10 +90,10 @@ export default function LucyGenXDemo() {
             <Sparkles className="w-14 h-14 text-purple-400 animate-pulse" />
           </div>
           <p className="text-2xl text-gray-300 font-light mb-2">
-            Трансформируем видео в образовательный контент с AI
+            Transform videos into educational content with AI
           </p>
           <p className="text-lg text-yellow-400 font-semibold">
-            ✂️ Удаляем до 30% "воды" • 🎬 Создаём новое видео • 🎯 Квизы и флешкарты
+            ✂️ Remove up to 30% filler • 🎬 Create new video • 🎯 Quizzes & flashcards
           </p>
           <div className="flex items-center justify-center gap-6 mt-4 text-sm text-gray-400">
             <span className="flex items-center gap-1"><Zap className="w-4 h-4 text-yellow-400" /> Gemini AI</span>
@@ -108,7 +108,7 @@ export default function LucyGenXDemo() {
             <div className="bg-white/5 backdrop-blur-2xl rounded-3xl p-8 border border-white/10 shadow-2xl">
               <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
                 <Upload className="w-8 h-8 text-yellow-400" />
-                Загрузка видео
+                Upload Video
               </h2>
               
               <div className="grid grid-cols-2 gap-3 mb-6">
@@ -121,7 +121,7 @@ export default function LucyGenXDemo() {
                   }`}
                 >
                   <Upload className="inline mr-2 w-5 h-5" />
-                  Файл
+                  File
                 </button>
                 <button
                   onClick={() => setUploadMode('url')}
@@ -150,8 +150,8 @@ export default function LucyGenXDemo() {
                   ) : (
                     <div>
                       <Upload className="w-20 h-20 mx-auto mb-3 group-hover:text-yellow-400 transition-colors" />
-                      <p className="text-2xl font-semibold">Перетащите видео сюда</p>
-                      <p className="text-gray-400 mt-2">или нажмите для выбора</p>
+                      <p className="text-2xl font-semibold">Drag video here</p>
+                      <p className="text-gray-400 mt-2">or click to select</p>
                     </div>
                   )}
                 </button>
@@ -173,12 +173,12 @@ export default function LucyGenXDemo() {
                 {isProcessing ? (
                   <>
                     <Loader2 className="inline mr-3 w-7 h-7 animate-spin" />
-                    Трансформация...
+                    Transformation...
                   </>
                 ) : (
                   <>
                     <Sparkles className="inline mr-3 w-7 h-7" />
-                    Трансформировать видео
+                    Transform Video
                   </>
                 )}
               </button>
@@ -189,11 +189,11 @@ export default function LucyGenXDemo() {
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-2xl font-bold flex items-center gap-3">
                     <Loader2 className="w-7 h-7 text-yellow-400 animate-spin" />
-                    Обработка
+                    Processing
                   </h3>
                   <div className="text-right">
                     <div className="text-3xl font-black text-yellow-400">{progress}%</div>
-                    <div className="text-sm text-gray-400">завершено</div>
+                    <div className="text-sm text-gray-400">completed</div>
                   </div>
                 </div>
                 
@@ -212,15 +212,15 @@ export default function LucyGenXDemo() {
                 <div className="grid grid-cols-3 gap-4 mt-6">
                   <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-4 text-center">
                     <div className="text-3xl font-black text-red-400">{waterRemoved}%</div>
-                    <div className="text-xs text-gray-400 mt-1">Удалено воды</div>
+                    <div className="text-xs text-gray-400 mt-1">Removed filler</div>
                   </div>
                   <div className="bg-green-500/10 border border-green-500/30 rounded-xl p-4 text-center">
                     <div className="text-3xl font-black text-green-400">{Math.floor(progress / 12.5)}</div>
-                    <div className="text-xs text-gray-400 mt-1">Слайдов создано</div>
+                    <div className="text-xs text-gray-400 mt-1">Slides generated</div>
                   </div>
                   <div className="bg-purple-500/10 border border-purple-500/30 rounded-xl p-4 text-center">
                     <div className="text-3xl font-black text-purple-400">{progress > 60 ? '✓' : '...'}</div>
-                    <div className="text-xs text-gray-400 mt-1">Озвучка</div>
+                    <div className="text-xs text-gray-400 mt-1">Voiceover</div>
                   </div>
                 </div>
               </div>
@@ -230,27 +230,27 @@ export default function LucyGenXDemo() {
               <div className="bg-white/5 backdrop-blur-2xl rounded-3xl p-8 border border-white/10 shadow-2xl">
                 <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
                   <CheckCircle className="w-7 h-7 text-green-400" />
-                  Результаты трансформации
+                  Transformation Results
                 </h3>
 
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="bg-gradient-to-br from-green-600/20 to-emerald-600/20 rounded-xl p-4 border border-green-500/30">
                     <Video className="w-8 h-8 text-green-400 mb-2" />
-                    <div className="text-xl font-bold">Новое видео</div>
-                    <div className="text-sm text-gray-400">Длительность: {results.duration}</div>
+                    <div className="text-xl font-bold">New Video</div>
+                    <div className="text-sm text-gray-400">Duration: {results.duration}</div>
                     <button className="mt-3 w-full py-2 bg-green-500 hover:bg-green-600 rounded-lg font-semibold transition-all">
                       <Download className="inline w-4 h-4 mr-2" />
-                      Скачать MP4
+                      Download MP4
                     </button>
                   </div>
 
                   <div className="bg-gradient-to-br from-red-600/20 to-pink-600/20 rounded-xl p-4 border border-red-500/30">
                     <FileText className="w-8 h-8 text-red-400 mb-2" />
-                    <div className="text-xl font-bold">PDF-слайды</div>
-                    <div className="text-sm text-gray-400">{results.slides} слайдов</div>
+                    <div className="text-xl font-bold">PDF Slides</div>
+                    <div className="text-sm text-gray-400">{results.slides} slides</div>
                     <button className="mt-3 w-full py-2 bg-red-500 hover:bg-red-600 rounded-lg font-semibold transition-all">
                       <Download className="inline w-4 h-4 mr-2" />
-                      Скачать PDF
+                      Download PDF
                     </button>
                   </div>
                 </div>
@@ -279,8 +279,8 @@ export default function LucyGenXDemo() {
                   {activeTab === 'video' && (
                     <div className="bg-black/30 rounded-xl p-8 text-center">
                       <PlayCircle className="w-20 h-20 mx-auto mb-4 text-green-400" />
-                      <p className="text-lg">Превью нового видео</p>
-                      <p className="text-sm text-gray-400 mt-2">С AI озвучкой и инфографикой</p>
+                      <p className="text-lg">New video preview</p>
+                      <p className="text-sm text-gray-400 mt-2">With AI voiceover and infographics</p>
                     </div>
                   )}
 
@@ -321,7 +321,7 @@ export default function LucyGenXDemo() {
                           <div className="w-full h-full bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-2xl">
                             <div className="text-sm text-purple-200 mb-2">{demoFlashcards[currentCard].category}</div>
                             <div className="text-3xl font-bold">{demoFlashcards[currentCard].front}</div>
-                            <div className="text-sm text-purple-200 mt-4">Нажмите для ответа</div>
+                            <div className="text-sm text-purple-200 mt-4">Click for answer</div>
                           </div>
                         </div>
                         
@@ -337,7 +337,7 @@ export default function LucyGenXDemo() {
                           onClick={() => {setCurrentCard(Math.max(0, currentCard - 1)); setFlipped(false);}}
                           className="flex-1 py-3 bg-white/10 hover:bg-white/20 rounded-lg font-semibold transition-all"
                         >
-                          ← Назад
+                          ← Back
                         </button>
                         <div className="flex-1 text-center py-3">
                           {currentCard + 1} / {demoFlashcards.length}
@@ -346,7 +346,7 @@ export default function LucyGenXDemo() {
                           onClick={() => {setCurrentCard(Math.min(demoFlashcards.length - 1, currentCard + 1)); setFlipped(false);}}
                           className="flex-1 py-3 bg-white/10 hover:bg-white/20 rounded-lg font-semibold transition-all"
                         >
-                          Вперёд →
+                          Next →
                         </button>
                       </div>
                     </div>
@@ -356,10 +356,10 @@ export default function LucyGenXDemo() {
                     <div className="bg-white/5 rounded-xl p-8 border border-white/10">
                       <div className="text-center">
                         <Brain className="w-16 h-16 mx-auto mb-4 text-purple-400" />
-                        <p className="text-lg font-semibold mb-2">Интерактивная майндкарта</p>
-                        <p className="text-sm text-gray-400">Визуализация всех концепций курса</p>
+                        <p className="text-lg font-semibold mb-2">Interactive mind map</p>
+                        <p className="text-sm text-gray-400">Visualization of all course concepts</p>
                         <button className="mt-4 py-2 px-6 bg-purple-500 hover:bg-purple-600 rounded-lg font-semibold transition-all">
-                          Открыть в полном размере
+                          Open full size
                         </button>
                       </div>
                     </div>
@@ -373,17 +373,17 @@ export default function LucyGenXDemo() {
             <div className="bg-white/5 backdrop-blur-2xl rounded-3xl p-6 border border-white/10 shadow-2xl">
               <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
                 <Sparkles className="w-6 h-6 text-yellow-400" />
-                Что создаёт LucyGenX?
+                What LucyGenX creates?
               </h3>
               
               <div className="space-y-3">
                 {[
-                  { icon: Video, text: 'Новое видео без "воды"', color: 'text-green-400' },
-                  { icon: Volume2, text: 'AI озвучка слайдов', color: 'text-blue-400' },
-                  { icon: FileText, text: 'PDF-презентация', color: 'text-red-400' },
-                  { icon: Trophy, text: 'Интерактивный квиз', color: 'text-yellow-400' },
-                  { icon: BookOpen, text: 'Флешкарты (как Quizlet)', color: 'text-purple-400' },
-                  { icon: Brain, text: 'Майндкарта концепций', color: 'text-pink-400' },
+                  { icon: Video, text: 'New video without filler', color: 'text-green-400' },
+                  { icon: Volume2, text: 'AI voiceover for slides', color: 'text-blue-400' },
+                  { icon: FileText, text: 'PDF presentation', color: 'text-red-400' },
+                  { icon: Trophy, text: 'Interactive quiz', color: 'text-yellow-400' },
+                  { icon: BookOpen, text: 'Flashcards (like Quizlet)', color: 'text-purple-400' },
+                  { icon: Brain, text: 'Concept mind map', color: 'text-pink-400' },
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-3 p-3 bg-white/5 rounded-lg hover:bg-white/10 transition-all">
                     <item.icon className={`w-5 h-5 ${item.color} flex-shrink-0`} />
@@ -394,23 +394,23 @@ export default function LucyGenXDemo() {
             </div>
 
             <div className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 backdrop-blur-2xl rounded-3xl p-6 border border-purple-500/30 shadow-2xl">
-              <h3 className="text-xl font-bold mb-4">⚡ Преимущества</h3>
+              <h3 className="text-xl font-bold mb-4">⚡ Advantages</h3>
               <div className="space-y-3 text-sm">
                 <div className="flex items-start gap-2">
                   <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
-                  <span><b>Удаление воды:</b> Сокращение на 30% за счёт AI-анализа</span>
+                  <span><b>Remove filler:</b> 30% reduction via AI analysis</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
-                  <span><b>Новое видео:</b> Не просто анализ - создание нового контента</span>
+                  <span><b>New video:</b> Not just analysis - creating new content</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
-                  <span><b>Интерактив:</b> Квизы, флешкарты, майндкарты</span>
+                  <span><b>Interactive:</b> Quizzes, flashcards, mind maps</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
-                  <span><b>Озвучка:</b> AI голос для каждого слайда</span>
+                  <span><b>Voiceover:</b> AI voice for each slide</span>
                 </div>
               </div>
             </div>
@@ -419,19 +419,19 @@ export default function LucyGenXDemo() {
               <div className="grid grid-cols-2 gap-4 text-center">
                 <div>
                   <div className="text-4xl font-black text-yellow-400">30%</div>
-                  <div className="text-xs text-gray-300 mt-1">Удаляем воды</div>
+                  <div className="text-xs text-gray-300 mt-1">Filler removed</div>
                 </div>
                 <div>
                   <div className="text-4xl font-black text-green-400">5min</div>
-                  <div className="text-xs text-gray-300 mt-1">Обработка</div>
+                  <div className="text-xs text-gray-300 mt-1">Processing</div>
                 </div>
                 <div>
                   <div className="text-4xl font-black text-purple-400">6</div>
-                  <div className="text-xs text-gray-300 mt-1">Форматов</div>
+                  <div className="text-xs text-gray-300 mt-1">Formats</div>
                 </div>
                 <div>
                   <div className="text-4xl font-black text-pink-400">∞</div>
-                  <div className="text-xs text-gray-300 mt-1">Видео</div>
+                  <div className="text-xs text-gray-300 mt-1">Videos</div>
                 </div>
               </div>
             </div>
