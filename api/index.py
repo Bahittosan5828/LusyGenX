@@ -1,5 +1,12 @@
+from fastapi import FastAPI
+from mangum import Mangum
+import sys
+import os
+
+# Добавляем корневую директорию в путь
+sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
+
 from backend_main import app
 
 # Vercel serverless handler
-def handler(request):
-    return app(request.environ, request.start_response)
+handler = Mangum(app, lifespan="off")
